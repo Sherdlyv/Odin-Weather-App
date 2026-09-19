@@ -1,8 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 module.exports = {
-  mode: 'development', // Ajouté pour un build plus rapide et lisible
+  mode: 'development', 
   entry: './src/dom.js',
   output: {
     filename: 'main.js',
@@ -13,13 +17,17 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Weather App',
-    }),
-  ],
+        new HtmlWebpackPlugin({
+            title: 'Weather App',
+        }),
+
+        new webpack.DefinePlugin({
+            API_KEY: JSON.stringify(process.env.API_KEY),
+        }),
+    ],
 };

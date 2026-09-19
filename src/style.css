@@ -1,23 +1,105 @@
 body {
-    background: linear-gradient(180deg, blue, #4687f8); /* Un bleu profond vers un bleu plus clair */
+    background: linear-gradient(180deg, blue, #4687f8);
     min-height: 100vh;
     margin: 0;
     font-family: sans-serif;
     color: white;
 }
 
-.container{
-    margin-top: 20px;
+
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.locationInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#cityTitle {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+#dateTimeInfo {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.controls {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap:20px;
-    margin-right: 20px;
+    gap: 20px;
 }
 
-#myImput{
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#myInput {
     background-color: white;
     color: black;
     border: 1px solid black;
     border-radius: 2px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.btnContent {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btnContent button {
+    background: none;       
+    border: none;          
+    color: white;          
+    font-weight: bold;
+    font-size: 2.5rem;      
+    cursor: pointer;        
+    transition: opacity 0.2s ease;
+    padding: 0;
+}
+
+.btnContent span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.btnContent button:hover {
+    opacity: 0.7;
+}
+
+.btnContent button.active {
+    border-bottom: 3px solid white; 
+}
+
+.weatherDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 15px;
+}
+
+.weatherDisplay p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#tempc {
+    font-size: 5rem;
+    font-weight: bold;
 }
