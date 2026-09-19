@@ -1,4 +1,4 @@
-const apiKey = API_KEY;
+const apiKey = process.env.API_KEY;
 
 
 export async function getWeather(city) {

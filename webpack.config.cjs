@@ -26,8 +26,7 @@ module.exports = {
             title: 'Weather App',
         }),
 
-        new webpack.DefinePlugin({
-            API_KEY: JSON.stringify(process.env.API_KEY),
-        }),
+         new webpack.EnvironmentPlugin(['API_KEY']),
+       
     ],
 };
